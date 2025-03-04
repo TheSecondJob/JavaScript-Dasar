@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With statement</title>
+</head>
+<body>
+    <script>
+        // Tanpa With Statement
+        const person = {
+            firstName: "Seno",
+            middleName: "Andika",
+            lastName: "Nugroho"
+        }
+
+        console.log(person.firstName);
+        console.log(person.middleName);
+        console.log(person.lastName);
+
+        // Dengan With Statement
+        with (person) {
+        console.log(firstName);
+        console.log(middleName);
+        console.log(lastName);
+        }
+
+        // With Statement Tidak direkomendasikan karena bisa membuat ambigu
+        // contoh
+
+        const firstName = "Rusdi"
+        const lastName = "Fu'ad"
+
+          with (person) {
+        console.log(firstName); // Niatnya ingin Rusdi
+        console.log(middleName);
+        console.log(lastName); // Niatnya ingin Fu'ad
+        }
+    </script>
+</body>
+</html>

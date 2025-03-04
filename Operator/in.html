@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName: "Seno",
+            lastName: "Andika"
+        }
+
+        // const result = "firstName" in person; // true
+        // document.writeln(`<p>${result}</p>`)
+
+        if("firstName" in person) {
+            alert(`Hello ${person.firstName}`)
+        } else {
+            alert(`Hello`)
+        }
+
+        // HANYA AKAN MENGECEK APAKAH PROPERTY/INDEX ADA ATAU TIDAK
+        //JIKA NILAI PROPERTY/INDEXNYA ADALAH UNDEFINED ATAU NULL AKAN TETAP DIANGGAP ADA
+
+        const student = {
+            firstName: "Seno",
+            middleName: undefined,
+            lastName: "Nugroho"
+        }
+
+        if ("middleName" in student) {
+            alert(`Hello ${student.middleName}`)
+        } else {
+            alert(`Hello Student`)
+        }
+
+        const name = [null, "Seno", null];
+        const result = 0 in name;
+        document.writeln(`<p>${result}</p>`)
+    </script>
+</body>
+</html>

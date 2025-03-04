@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+</head>
+<body>
+    <script>
+        // This di global scope
+        console.info(this); // Window
+
+        // This di function dan nested function
+        function sample() {
+            console.info(this); // Window
+
+            function inner() {
+                console.info(this); // Window
+            }
+            inner();
+        }
+        sample();
+
+        // This di Object Method
+        const person = {    
+            name: "Seno",
+            sayHello: function(value) {
+                // This = person
+                console.info(`Hello ${value}, My Name is ${this.name}`); 
+            }
+        };
+
+        person.sayHello("Rusdi")
+    </script>
+</body>
+</html>

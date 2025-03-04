@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        // Function Generator Sederhana
+        function* createNames() {
+            yield "Seno";
+            yield "Andika";
+            yield "Nugroho";
+        }
+
+        const names = createNames();
+        for (const name of names) {
+            document.writeln(`<p>${name}</p>`);
+        }
+
+        // Function Generator Kompleks
+        
+        // Generator bersifat lazy
+        // Artinya jika data belum kita ambil dari generator, yield selanjutnya tidak akan dieksekusi
+        //lazy
+        function* buatGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`Yield ${i}`);
+                    yield i;
+                }
+            }
+        }
+
+        // eager
+         function buatGanjilArray(value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`Yield ${i}`);
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+        const angkaGanjil = buatGanjil(100);
+        // for (const angka of angkaGanjil) {
+        //     console.info(angka);
+        // }
+
+        // Lazy Generator
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+        
+    </script>
+</body>
+</html>

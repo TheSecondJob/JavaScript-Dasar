@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName: "Seno",
+            middleName: "Andika",
+            lastName: "Nugroho"
+        }
+
+        for (const property in person) {
+           document.writeln(`<p>Property ${property} : ${person[property]}</p>`);
+        }
+
+        // Contoh Penggunaan Di Array
+        const names = ["Seno", "Rusdi", "Fu'ad"];
+
+        for (const index in names) {
+           document.writeln(`<p>Index ${index} : ${names[index]}</p>`)
+        }
+    </script>
+</body>
+</html>

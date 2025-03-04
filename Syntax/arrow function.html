@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        // const sayHello = (name) => {
+        //     const say = `Hello ${name}`;
+        //     document.writeln(say);
+        // }
+
+        // sayHello("Seno");
+
+
+        // Arrow Function tanpa block
+        // const sayHello = (name) => document.writeln(`Hello ${name}`);
+
+        // Arrow Function tanpa kurung parameter
+        const sayHello = name => document.writeln(`Hello ${name}`);
+
+        sayHello("SENO");
+
+
+        // Arrow Function return value
+
+        // Dengan block
+        // const sum = (first, second) => {
+        //     return  first + second;
+        // }
+
+        // document.writeln(sum(20, 30));
+
+
+        // Tanpa block
+        const sum = (first, second) => first + second;
+
+        document.writeln(sum(20, 30));
+
+        // Arrow Function sebagai parameter
+        function giveMeName(callback) {
+            callback("Rusdi")
+        }
+
+        // Anonymous Function
+        giveMeName( function (name) {
+            document.writeln(`Hello ${name}`)
+        })
+
+        // Arrow Function
+        giveMeName((name) => document.writeln(`Hello ${name}`))
+    </script>
+</body>
+</html>
